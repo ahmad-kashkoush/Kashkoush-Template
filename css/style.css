@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ! global variables */
+:root {
+  --section-background: #ececec;
+  --section-item-background: #ffffff;
+  --link-hover-color: #fafafa;
+  --identity-color: #2196f3;
+  --main-transition: 0.3s;
+}
+/* ? End Global Variables */
+/* ! Global Styling */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Cairo, sans-serif;
+  background-color: var(--section-background);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* ? End Global Styling */
+/*! Components */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*! Start Header */
+header {
+  background-color: var(--section-item-background);
+}
+header .container {
+  position: relative;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  color: var(--identity-color);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  header .logo {
+    height: 50px;
+  }
+}
+header .main-links {
+  display: flex;
+}
+
+header .main-links > li > a {
+  height: 72px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 18px;
+  overflow: hidden;
+  transition: all 0.3s;
+  text-transform: capitalize;
+  position: relative;
+}
+@media (max-width: 767px) {
+  header .main-links > li > a {
+    font-size: 14px;
+    height: 40px;
+    padding: 0px 10px;
+  }
+}
+
+header .main-links > li > a:hover {
+  color: var(--identity-color);
+  background-color: var(--link-hover-color);
+}
+header .main-links > li > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 4px;
+  width: 100%;
+  background-color: var(--identity-color);
+  transition: all 0.3s;
+}
+header .main-links > li > a:hover:before {
+  left: 0;
+}
+@media (max-width: 767px) {
+  header nav {
+    text-align: center;
+    flex-direction: column;
+  }
+}
+/* ! Start Mega Menu */
+header .mega-menu {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  top: calc(100% + 50px);
+  opacity: 0;
+  z-index: -1;
+  transition: top var(--main-transition), opacity var(--main-transition);
+  /* top: 72px; */
+}
+
+header .mega-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 30px;
+  justify-content: space-between;
+  background-color: var(--section-item-background);
+  z-index: -1;
+  border-bottom: 3px solid var(--identity-color);
+}
+@media (max-width: 767px) {
+  header .mega-menu {
+    flex-direction: column;
+    padding: 10px;
+    gap: 0;
+    text-align: start;
+  }
+}
+
+header .mega-menu .mega-image img {
+  max-width: 100%;
+}
+@media (max-width: 991px) {
+  header .mega-image {
+    display: none;
+  }
+}
+
+header .mega-menu .mega-links {
+  min-width: 250px;
+}
+header .mega-menu .mega-links:first-of-type {
+  flex: 1;
+}
+header .mega-menu .mega-links li {
+  position: relative;
+  overflow: hidden;
+}
+.mega-menu .mega-links li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--link-hover-color);
+  transition: left var(--main-transition);
+}
+.mega-menu .mega-links li:hover::before {
+  left: 0;
+}
+.mega-menu .mega-links a {
+  text-transform: capitalize;
+  color: var(--identity-color);
+  position: relative;
+  z-index: 3;
+  display: block;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.mega-menu .mega-links li:not(:last-of-type) {
+  border-bottom: 1px solid #e9e6e6;
+}
+@media (max-width: 767px) {
+  .mega-menu .mega-links:first-of-type li:last-of-type {
+    border-bottom: 1px solid #e9e6e6;
+  }
+}
+
+header .mega-menu .mega-links a i {
+  font-size: 16px;
+  margin-right: 10px;
+}
+header .main-links > li > a:hover + .mega-menu {
+  opacity: 2;
+  z-index: 100;
+  top: calc(100% + 1px);
+}
+/* ? End  Mega Menu */
+
+/*? End Header */
