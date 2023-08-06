@@ -314,3 +314,63 @@ header .main-links > li > a + .mega-menu:hover {
   font-size: 30px;
   animation: 2s ease alternate double-vertical-move infinite;
 }
+/* ! Landing Animation */
+@keyframes double-vertical-move {
+  /* 0% {
+    transform: translateY(0%);
+  }
+  10% {
+    transform: translateY(0%);
+  }
+  20% {
+    transform: translateY(0%);
+  }
+  30% {
+    transform: translateY(0%);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+  70% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: translateY(0%);
+  }
+  90% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(0%);
+  } */
+  /* *  Typing animation stamps like above is not efficient, group them */
+  40%,
+  60% {
+    transform: translateY(-15px);
+  }
+  0%,
+  10%,
+  20%,
+  30%,
+  50%,
+  70%,
+  80%,
+  90%,
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes vertical-move {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(50px);
+  }
+}
