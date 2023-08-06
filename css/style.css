@@ -224,3 +224,93 @@ header .main-links > li > a + .mega-menu:hover {
 /* ? End  Mega Menu */
 
 /*? End Header */
+
+/* ! Start Landing */
+#landing {
+  background-color: var(--section-item-background);
+  padding-bottom: var(--section-padding);
+  overflow: hidden;
+  position: relative;
+  height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#landing .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  #landing {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  #landing .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#landing::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* z-index: -1; */
+  transform: skewY(-6deg);
+  background-color: var(--section-background);
+}
+
+#landing .landing-img {
+  position: relative;
+  /* z-index: 1; */
+}
+#landing .landing-img img {
+  max-width: 100%;
+  animation: 3s linear alternate vertical-move infinite;
+}
+@media (max-width: 991px) {
+  #landing .landing-img {
+    display: none;
+  }
+}
+
+#landing .landing-text {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+}
+
+#landing .landing-text p {
+  color: var(--paragraph-secondary-color);
+  margin-top: 15px;
+  text-transform: capitalize;
+}
+#landing .landing-text h3 {
+  text-transform: capitalize;
+  font-size: 33px;
+}
+@media (max-width: 400px) {
+  #landing .landing-text p {
+    font-size: 16px;
+  }
+  #landing .landing-text h3 {
+    font-size: 27px;
+  }
+}
+#landing a {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  font-weight: bolder;
+  /* transform: translateX(-50%); */
+  z-index: 2;
+  color: var(--identity-color);
+  font-size: 30px;
+  animation: 2s ease alternate double-vertical-move infinite;
+}
