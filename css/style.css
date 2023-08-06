@@ -22,7 +22,6 @@ html {
 }
 body {
   font-family: Cairo, sans-serif;
-  background-color: var(--section-background);
 }
 ul {
   list-style: none;
@@ -53,6 +52,83 @@ a {
     width: 1170px;
   }
 }
+.special-heading {
+  border: 1px solid;
+  text-transform: uppercase;
+  width: fit-content;
+  padding: 10px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  border: 1px solid #000;
+  --sz: 12px;
+  transition: color var(--main-transition) , border var(--main-transition) ;
+}
+
+.special-heading::after {
+  content: "";
+  position: absolute;
+  width: var(--sz);
+  height: var(--sz);
+  background: var(--identity-color);
+  border-radius: 50%;
+  top: 50%;
+  right: -30px;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.special-heading::before {
+  content: "";
+  position: absolute;
+  width: var(--sz);
+  height: var(--sz);
+  background: var(--identity-color);
+  border-radius: 50%;
+  top: 50%;
+  left: -30px;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.special-heading:hover {
+  color: #fff;
+  border: 1px solid #fff;
+  transition-delay: .5s;
+}
+.special-heading:hover::before {
+  animation: move-right .5s linear forwards;
+}
+.special-heading:hover::after {
+  animation: move-left .5s  linear forwards;
+}
+/* *** Start special-heading animation */
+@keyframes move-right {
+  50% {
+    transform: translateY(-50%) translateX(30px);
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-50%) translateX(30px);
+    width: 50%;
+    height: 100%;
+    border-radius: 0;
+
+  }
+}
+@keyframes move-left {
+  50% {
+    transform: translateY(-50%) translateX(-30px);
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-50%) translateX(-30px);
+    width: 50%;
+    height: 100%;
+    border-radius: 0;
+
+  }
+}
+/* *** End special-heading animation */
+/* ? End Components */
 
 /*! Start Header */
 header {
@@ -374,3 +450,5 @@ header .main-links > li > a + .mega-menu:hover {
     transform: translateY(50px);
   }
 }
+/* ? End Landing Animation */
+/* ? End Landing */
