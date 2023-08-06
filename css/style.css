@@ -214,7 +214,9 @@ header .mega-menu .mega-links a i {
   font-size: 16px;
   margin-right: 10px;
 }
-header .main-links > li > a:hover + .mega-menu {
+// Updating Mega Menu to stand still when hover over it
+header .main-links > li > a:hover + .mega-menu,
+header .main-links > li > a + .mega-menu:hover {
   opacity: 2;
   z-index: 100;
   top: calc(100% + 1px);
