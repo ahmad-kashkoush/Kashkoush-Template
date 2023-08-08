@@ -13,7 +13,7 @@
   --identity-color: #2196f3;
   --main-transition: 0.3s;
   --section-padding: 100px;
-  --paragraph-secondary-color: #6e6a68;
+  --paragraph-secondary-color: #777778;
 }
 /* ? End Global Variables */
 /* ! Global Styling */
@@ -62,7 +62,7 @@ a {
   position: relative;
   border: 1px solid #000;
   --sz: 12px;
-  transition: color var(--main-transition) , border var(--main-transition) ;
+  transition: color var(--main-transition), border var(--main-transition);
 }
 
 .special-heading::after {
@@ -92,13 +92,13 @@ a {
 .special-heading:hover {
   color: #fff;
   border: 1px solid #fff;
-  transition-delay: .5s;
+  transition-delay: 0.5s;
 }
 .special-heading:hover::before {
-  animation: move-right .5s linear forwards;
+  animation: move-right 0.5s linear forwards;
 }
 .special-heading:hover::after {
-  animation: move-left .5s  linear forwards;
+  animation: move-left 0.5s linear forwards;
 }
 /* *** Start special-heading animation */
 @keyframes move-right {
@@ -111,7 +111,6 @@ a {
     width: 50%;
     height: 100%;
     border-radius: 0;
-
   }
 }
 @keyframes move-left {
@@ -124,7 +123,6 @@ a {
     width: 50%;
     height: 100%;
     border-radius: 0;
-
   }
 }
 /* *** End special-heading animation */
@@ -290,7 +288,7 @@ header .mega-menu .mega-links a i {
   font-size: 16px;
   margin-right: 10px;
 }
-// Updating Mega Menu to stand still when hover over it
+/*Updating Mega Menu to stand still when hover over it*/
 header .main-links > li > a:hover + .mega-menu,
 header .main-links > li > a + .mega-menu:hover {
   opacity: 2;
@@ -452,3 +450,71 @@ header .main-links > li > a + .mega-menu:hover {
 }
 /* ? End Landing Animation */
 /* ? End Landing */
+
+/* ! Start Articles */
+
+/* 
+todo article-card 
+      todo arrow animation in [Read More]
+      todo img
+
+*/
+#articles {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+#articles .articles-gallery {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+#articles .article-card {
+  /* border: 1px solid #e6e6e7; */
+  transition: transform var(--main-transition) ease-in;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+#articles .article-card:hover {
+  transform: translateY(-10px);
+}
+#articles .article-card .article-img {
+}
+#articles .article-card .article-img img {
+  max-width: 100%;
+}
+#articles .article-card .article-text {
+  padding: 10px;
+
+  border-bottom: 1px solid #e6e6e7;
+}
+#articles .article-card .article-text > h4 {
+  font-size: 22px;
+  /* margin-top: 15px; */
+}
+#articles .article-card .article-text > p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 10px 0;
+  color: var(--paragraph-secondary-color);
+}
+#articles .article-card .info {
+  padding: 15px 10px;
+}
+#articles .article-card .info > a {
+  font-size: 16px;
+  color: var(--identity-color);
+  display: flex;
+  justify-content: space-between;
+}
+#articles .article-card:hover .info > a > i {
+  animation: arrow-move-right 0.6s ease-in infinite;
+}
+
+/* Arrow Animation */
+@keyframes arrow-move-right {
+  to {
+    transform: translateX(7px);
+  }
+}
+/* ? End Articles */
