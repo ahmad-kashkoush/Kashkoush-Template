@@ -53,7 +53,7 @@ a {
   }
 }
 .special-heading {
-  border: 1px solid;
+  background-color: transparent;
   text-transform: uppercase;
   width: fit-content;
   padding: 10px 20px;
@@ -63,6 +63,9 @@ a {
   border: 1px solid #000;
   --sz: 12px;
   transition: color var(--main-transition), border var(--main-transition);
+  margin-bottom: 100px;
+  z-index: 2;
+ 
 }
 
 .special-heading::after {
@@ -98,7 +101,7 @@ a {
   animation: move-right 0.5s linear forwards;
 }
 .special-heading:hover::after {
-  animation: move-left 0.5s linear forwards;
+  animation: move-left .5s linear forwards;
 }
 /* *** Start special-heading animation */
 @keyframes move-right {
@@ -120,7 +123,7 @@ a {
   }
   100% {
     transform: translateY(-50%) translateX(-30px);
-    width: 50%;
+    width: 55%;
     height: 100%;
     border-radius: 0;
   }
@@ -478,8 +481,7 @@ todo article-card
 #articles .article-card:hover {
   transform: translateY(-10px);
 }
-#articles .article-card .article-img {
-}
+
 #articles .article-card .article-img img {
   max-width: 100%;
 }
@@ -518,3 +520,64 @@ todo article-card
   }
 }
 /* ? End Articles */
+/* 
+
+
+*/
+/* ! Start Gallery */
+#gallery {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-background);
+  background-color: var(--section-background);
+
+}
+
+#gallery .container {
+}
+#gallery .grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 40px;
+}
+#gallery .grid-gallery .box {
+  background-color: var(--section-item-background);
+  border: 15px solid var(--section-item-background);
+  overflow: hidden;
+  position: relative;
+}
+#gallery .grid-gallery img {
+  max-width: 100%;
+  width: 100%;
+  transition: transform var(--main-transition), animation;
+}
+#gallery .grid-gallery .box::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0%;
+  height: 0%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255 255 255 / 0.2);
+  z-index: 3;
+}
+#gallery .grid-gallery  .box:hover img  {
+  transform: scale(1.1) rotate(5deg);
+}
+#gallery .grid-gallery .box:hover::before {
+  animation: flashing 2s;
+}
+
+@keyframes flashing {
+  40%{
+    width: 200%;
+    height: 200%;
+  }
+  70%{
+    background-color: transparent;
+  }
+  100%{
+    width: 0%;
+    height: 0%;
+  }
+}
