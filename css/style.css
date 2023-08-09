@@ -527,9 +527,8 @@ todo article-card
 /* ! Start Gallery */
 #gallery {
   padding-top: var(--section-padding);
-  padding-bottom: var(--section-background);
+  padding-bottom: var(--section-padding);
   background-color: var(--section-background);
-
 }
 
 #gallery .container {
