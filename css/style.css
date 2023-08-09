@@ -60,11 +60,13 @@ a {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  border: 1px solid #000;
+  border: 2px solid #000;
   --sz: 12px;
   transition: color var(--main-transition), border var(--main-transition);
   margin-bottom: 100px;
   z-index: 2;
+  font-size: 33px;
+
 }
 
 .special-heading::after {
