@@ -750,7 +750,8 @@ todo article-card
   font-size: 18px;
 
 }
-#testimonials .grid .box ul li .fas {
+/* Adding class to font-awesome icon , so that you don't have conflict with any other libraries */
+#testimonials .grid .box ul li .filled {
   color: #ffc107;
 }
 
