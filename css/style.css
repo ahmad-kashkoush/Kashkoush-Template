@@ -624,10 +624,18 @@ todo article-card
   right: 0;
   /* border: 100px solid black; */
   border: solid;
-  border-width: 0px 0px 100px 361px;
+  --border-horizontal: 361px;
+  --border-vertical: 100px;
+  border-width: 0px 0px var(--border-vertical) var(--border-horizontal);
   border-color: transparent transparent white transparent;
   transition: var(--main-transition);
   z-index: 1;
+}
+@media (max-width: 704px) {
+  #features .grid .box .image::after {
+    --border-vertical: 100px;
+    --border-horizontal: 800px;
+  }
 }
 #features .grid .box .image img {
   width: 100%;
