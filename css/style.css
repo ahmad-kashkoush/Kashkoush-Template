@@ -66,7 +66,6 @@ a {
   margin-bottom: 100px;
   z-index: 2;
   font-size: 33px;
-
 }
 
 .special-heading::after {
@@ -734,6 +733,7 @@ todo article-card
   text-transform: capitalize;
   margin-top: 10px;
   margin-bottom: 10px;
+  color: var(--identity-color);
 }
 #testimonials .grid .box p:first-of-type {
   color: var(--paragraph-secondary-color);
@@ -746,9 +746,8 @@ todo article-card
   gap: 3px;
   margin-bottom: 10px;
 }
-#testimonials .grid .box ul li{
+#testimonials .grid .box ul li {
   font-size: 18px;
-
 }
 /* Adding class to font-awesome icon , so that you don't have conflict with any other libraries */
 #testimonials .grid .box ul li .filled {
@@ -763,3 +762,96 @@ todo article-card
 }
 
 /* ? End Testimonials */
+
+/* ! Start Team Members */
+/* todo So So Important section */
+#team-members {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+#team-members .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+#team-members .grid .box {
+  position: relative;
+  padding-top: 60px;
+}
+#team-members .grid .box::after,
+#team-members .grid .box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  transition: var(--main-transition);
+  border-radius: 10px;
+}
+#team-members .grid .box::after {
+  width: 0%;
+  background-color: #e6e6e7;
+  z-index: -1;
+}
+#team-members .grid .box::before {
+  width: calc(100% - 60px);
+  background-color: var(--section-background);
+  z-index: -2;
+}
+#team-members .grid .box .content {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+#team-members .grid .box .content img {
+  width: calc(100% - 60px);
+  border-radius: 10px;
+  z-index: 2;
+  transition: var(--main-transition);
+  /* display: none; */
+}
+#team-members .grid .box .content ul {
+  /* padding: 10px; */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  gap: 30px;
+}
+#team-members .grid .box .content ul li {
+  color: var(--paragraph-secondary-color);
+  transition: var(--main-transition);
+  font-size: 18px;
+}
+#team-members .grid .box .info {
+  padding-left: 80px;
+
+}
+#team-members .grid .box .info h4 {
+  color: var(--identity-color);
+  margin-top: 20px;
+  margin-bottom: 0;
+  transition: var(--main-transition);
+}
+#team-members .grid .box:hover .info h4{
+  color: var(--paragraph-secondary-color);
+}
+#team-members .grid .box .info p{
+  margin-bottom: 25px;
+  margin-top:10px;
+}
+/* Hover team member */
+#team-members .grid .box .content ul li:hover {
+  color: var(--identity-color);
+}
+#team-members .grid .box:hover img {
+  filter: grayscale(8);
+}
+#team-members .grid .box:hover::after {
+  width: calc(100% - 60px);
+}
+
+/* ? End Team Members */
