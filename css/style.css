@@ -818,7 +818,7 @@ todo article-card
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   gap: 30px;
 }
 #team-members .grid .box .content ul li {
@@ -828,7 +828,6 @@ todo article-card
 }
 #team-members .grid .box .info {
   padding-left: 80px;
-
 }
 #team-members .grid .box .info h4 {
   color: var(--identity-color);
@@ -836,12 +835,12 @@ todo article-card
   margin-bottom: 0;
   transition: var(--main-transition);
 }
-#team-members .grid .box:hover .info h4{
+#team-members .grid .box:hover .info h4 {
   color: var(--paragraph-secondary-color);
 }
-#team-members .grid .box .info p{
+#team-members .grid .box .info p {
   margin-bottom: 25px;
-  margin-top:10px;
+  margin-top: 10px;
 }
 /* Hover team member */
 #team-members .grid .box .content ul li:hover {
@@ -855,3 +854,87 @@ todo article-card
 }
 
 /* ? End Team Members */
+/* ! Start Services */
+#services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
+}
+#services .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+#services .grid .box {
+  background-color: var(--section-item-background);
+  text-align: center;
+  padding-top: 25px;
+  transition: transform var(--main-transition);
+  position: relative;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 2%);
+}
+#services .grid .box:hover {
+  transform: translateY(-15px);
+}
+#services .grid .box::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background-color: var(--identity-color);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width var(--main-transition);
+}
+#services .grid .box:hover::before {
+  width: 100%;
+}
+
+#services .grid .box i {
+  color: #d5d5d5;
+  margin-bottom: 15px;
+}
+#services .grid .box h3 {
+  text-transform: capitalize;
+  color: var(--identity-color);
+  font-size: 27px;
+  margin-bottom: 40px;
+}
+#services .grid .box .details {
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#services .grid .box .cnt {
+  background-color: var(--identity-color);
+  color: white;
+  font-size: 39px;
+  font-weight: bold;
+  display: flex;
+  /* justify-content: center; */
+  width: 106px;
+  position: relative;
+}
+#services .grid .box .cnt p {
+  margin-left: 20px;
+}
+
+#services .grid .box .cnt::after {
+  content: "";
+  height: 100%;
+  width: 45%;
+  position: absolute;
+  top: 0;
+  right: -26px;
+  transform: skew(-33deg, 0deg);
+  background: #d5d5d5;
+}
+#services .grid .box a {
+  text-transform: capitalize;
+  font-size: 18px;
+  color: var(--identity-color);
+  margin-right: 10px;
+}
+/* ? Start Serivices */
