@@ -804,7 +804,11 @@ todo article-card
   align-items: center;
   /* justify-content: space-between; */
 }
-
+@media (max-width:685px){
+  #team-members .grid .box::before {
+    width: calc(100%);
+  }
+}
 #team-members .grid .box .content img {
   width: calc(100% - 60px);
   border-radius: 10px;
@@ -851,6 +855,12 @@ todo article-card
 }
 #team-members .grid .box:hover::after {
   width: calc(100% - 60px);
+}
+@media (max-width:685px){
+  #team-members .grid .box:hover::after {
+    width: calc(100%);
+  }
+  
 }
 
 /* ? End Team Members */
