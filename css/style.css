@@ -1430,3 +1430,85 @@ todo article-card
   padding: 10px;
 }
 /* ? End video section */
+
+/* 
+
+*/
+
+/* ! Start stats */
+#stats {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
+  background-image: url("../imgs/stats.jpg");
+  position: relative;
+}
+#stats::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: rgb(255 255 255 / 90%);
+}
+#stats > * {
+  position: relative;
+  z-index: 2;
+}
+#stats > h3 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+#stats .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+#stats .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+  background-color: var(--section-item-background);
+  gap: 20px;
+  position: relative;
+}
+#stats .box::before,
+#stats .box::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 0%;
+  background-color: var(--identity-color);
+  transition: height .5s ease-out;
+}
+#stats .box::before {
+  bottom: 0;
+  left: 0;
+}
+#stats .box::after {
+  top: 0;
+  right: 0;
+}
+#stats .box:hover::after,
+#stats .box:hover::before{
+  height: 100%;
+}
+#stats .box > i {
+}
+#stats .box > span:first-of-type {
+  font-size: 45px;
+  font-weight: bold;
+}
+#stats .box > span:last-of-type {
+  text-transform: capitalize;
+  color: var(--identity-color);
+  font-weight: bold;
+}
+/* ?End stats */
