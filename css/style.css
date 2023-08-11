@@ -804,7 +804,7 @@ todo article-card
   align-items: center;
   /* justify-content: space-between; */
 }
-@media (max-width:685px){
+@media (max-width: 685px) {
   #team-members .grid .box::before {
     width: calc(100%);
   }
@@ -856,11 +856,10 @@ todo article-card
 #team-members .grid .box:hover::after {
   width: calc(100% - 60px);
 }
-@media (max-width:685px){
+@media (max-width: 685px) {
   #team-members .grid .box:hover::after {
     width: calc(100%);
   }
-  
 }
 
 /* ? End Team Members */
@@ -1334,7 +1333,6 @@ todo article-card
 @media (min-width: 1200px) {
   #plans .popular {
     transform: translateY(-15px);
-    
   }
 }
 
@@ -1346,10 +1344,10 @@ todo article-card
   padding: 6px 0px 31px 5px;
   font-size: 20px;
   position: absolute;
-  writing-mode: vertical-rl;/*! important trick by Elzero*/
+  writing-mode: vertical-rl; /*! important trick by Elzero*/
   top: 0px;
   right: 23px;
-  /* transform: rotate(90deg);! My Solution to make font vertical*/ 
+  /* transform: rotate(90deg);! My Solution to make font vertical*/
 }
 #plans .popular::after {
   content: "";
@@ -1364,3 +1362,70 @@ todo article-card
   border-color: transparent transparent white transparent;
   z-index: 3;
 }
+/* ? End Plans */
+/*
+
+*/
+/* ! start video section */
+#vids {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-item-background);
+}
+#vids .container .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--section-background);
+}
+@media (max-width: 991px) {
+  #vids .container .content {
+    flex-direction: column;
+  }
+}
+#vids .vids {
+  border: 1px solid #f6f6f6;
+  min-width: 300px;
+  background-color: var(--section-item-background);
+}
+#vids .vids li {
+  padding: 20px;
+  border-top: 1px solid #f6f6f6;
+  transition: var(--main-transition);
+  text-transform: capitalize;
+  font-size: 16px;
+}
+#vids .vids li.head {
+  background-color: #f4f4f4;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  border-top: none;
+}
+#vids .vids li:not(:first-of-type):hover {
+  cursor: pointer;
+}
+#vids .vids li:not(:first-of-type):hover {
+  color: var(--identity-color);
+}
+#vids .vids li span {
+  color: var(--paragraph-secondary-color);
+  display: block;
+  margin-top: 10px;
+}
+#vids .player {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#vids .player img {
+  max-width: 100%;
+}
+#vids p {
+  background-color: var(--section-item-background);
+
+  padding: 10px;
+}
+/* ? End video section */
