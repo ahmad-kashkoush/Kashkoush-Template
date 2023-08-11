@@ -1064,3 +1064,113 @@ todo article-card
   margin-bottom: 10px;
 }
 /* ? End how-it-works? */
+
+/* ! Start Latest Events */
+#latest-events {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-item-background);
+}
+
+#latest-events .flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#latest-events .flex > img {
+  max-width: 57%;
+  /* margin-right: 100px; */
+}
+@media (max-width: 992px) {
+  #latest-events .flex > img {
+    display: none;
+  }
+}
+#latest-events .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+#latest-events .flex .date {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+#latest-events .flex .date .unit {
+  border-radius: 5px;
+  border: 1px solid #d4d4d4;
+  width: 90px;
+}
+#latest-events .flex .date .unit > span {
+  display: block;
+  text-align: center;
+}
+#latest-events .flex .date .unit > span:first-of-type {
+  padding: 10px 15px;
+  font-size: 33px;
+  font-weight: bolder;
+  color: var(--identity-color);
+}
+#latest-events .flex .date .unit > span:last-of-type {
+  border-top: 1px solid #d4d4d4;
+  padding: 5px 5px;
+}
+#latest-events .flex > .content h3 {
+  margin-top: 20px;
+  font-size: 27px;
+}
+#latest-events .flex > .content p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* font-size: 18px; */
+  /* min-width: 253%; */
+  color: var(--paragraph-secondary-color);
+  line-height: 1.3;
+}
+#latest-events form {
+  width: 64%;
+  margin: auto;
+  background-color: var(--section-background);
+  padding: 30px 28px;
+  border-radius: 40px;
+  display: flex;
+  gap: 20px;
+}
+#latest-events form > input[type="email"] {
+  flex: 1;
+  border-radius: 40px;
+  padding: 20px 15px;
+  font-size: 18px;
+  outline: none;
+  border: none;
+}
+#latest-events form > input[type="email"]:focus {
+  outline: none;
+  border: none;
+}
+#latest-events form > button {
+  background-color: var(--identity-color);
+  border: none;
+  color: var(--section-item-background);
+  border-radius: 40px;
+  padding: 20px 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+@media (max-width: 767px) {
+  #latest-events form {
+    width: 80%;
+    flex-direction: column;
+    border-radius: 0;
+  }
+  #latest-events form > button {
+    border-radius: 0;
+  }
+  #latest-events form > input[type="email"] {
+    border-radius: 0;
+  }
+}
+/* ?End Latest Events */
