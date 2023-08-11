@@ -1095,7 +1095,7 @@ todo article-card
   flex-wrap: wrap;
 }
 #latest-events .flex > img {
-  max-width: 57%;
+  max-width:450px;
   /* margin-right: 100px; */
 }
 @media (max-width: 992px) {
@@ -1148,7 +1148,7 @@ todo article-card
   line-height: 1.3;
 }
 #latest-events form {
-  width: 64%;
+  width: 600px;
   margin: auto;
   background-color: var(--section-background);
   padding: 30px 28px;
@@ -1161,12 +1161,19 @@ todo article-card
   border-radius: 40px;
   padding: 20px 15px;
   font-size: 18px;
+  caret-color: var(--identity-color);
   outline: none;
   border: none;
 }
 #latest-events form > input[type="email"]:focus {
   outline: none;
   border: none;
+}
+#latest-events form > input[type="email"]::placeholder{
+  transition: opacity var(--main-transition);
+}
+#latest-events form > input[type="email"]:focus::placeholder{
+  opacity: 0;
 }
 #latest-events form > button {
   background-color: var(--identity-color);
@@ -1190,4 +1197,5 @@ todo article-card
     border-radius: 0;
   }
 }
+
 /* ?End Latest Events */
