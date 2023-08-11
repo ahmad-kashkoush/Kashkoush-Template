@@ -1019,8 +1019,8 @@ todo article-card
   max-width: 100%;
   margin-right: 100px;
 }
-@media (max-width:992px){
-  #how-it-works .container > img{
+@media (max-width: 992px) {
+  #how-it-works .container > img {
     margin: 0 0 50px 0;
   }
 }
@@ -1095,7 +1095,7 @@ todo article-card
   flex-wrap: wrap;
 }
 #latest-events .flex > img {
-  max-width:450px;
+  max-width: 450px;
   /* margin-right: 100px; */
 }
 @media (max-width: 992px) {
@@ -1169,10 +1169,10 @@ todo article-card
   outline: none;
   border: none;
 }
-#latest-events form > input[type="email"]::placeholder{
+#latest-events form > input[type="email"]::placeholder {
   transition: opacity var(--main-transition);
 }
-#latest-events form > input[type="email"]:focus::placeholder{
+#latest-events form > input[type="email"]:focus::placeholder {
   opacity: 0;
 }
 #latest-events form > button {
@@ -1199,3 +1199,158 @@ todo article-card
 }
 
 /* ?End Latest Events */
+#plans {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
+}
+#plans .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+#plans .box {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  background-color: var(--section-item-background);
+}
+#plans .box .head {
+  position: relative;
+  padding: 20px;
+}
+#plans .box .head::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #f6f6f6;
+  transition: var(--main-transition);
+}
+#plans .box:hover .head::after {
+  width: 100%;
+  /* display: none; */
+}
+#plans .box .head > * {
+  position: relative;
+  z-index: 2;
+}
+#plans .box .head h3 {
+  margin: 20px 0;
+  text-transform: capitalize;
+  text-align: center;
+}
+#plans .box .head .img-holder {
+  text-align: center;
+}
+#plans .box .head .img-holder img {
+  margin-top: 20px;
+  max-width: 80px;
+}
+#plans .box .head .price {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  color: var(--identity-color);
+  font-size: 60px;
+}
+
+#plans .box .head .price + p {
+  text-transform: capitalize;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 5px;
+  color: var(--paragraph-secondary-color);
+}
+#plans .box .discription {
+  padding-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+#plans .box .discription::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #f6f6f6;
+  transition: var(--main-transition);
+}
+#plans .box:hover .discription::before {
+  width: 100%;
+}
+#plans .box .feature {
+}
+#plans .box .feature li {
+  text-align: left;
+  border-top: 1px solid#eee;
+  padding: 20px 0;
+  font-size: 18px;
+  position: relative;
+}
+#plans .box .feature li::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00c";
+  font-weight: bold;
+  color: var(--identity-color);
+  margin-left: 22px;
+  margin-right: 12px;
+}
+#plans .box a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+  border: 2px solid var(--identity-color);
+  color: var(--identity-color);
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: capitalize;
+  position: relative;
+  transition: var(--main-transition);
+}
+#plans .box a:hover {
+  background-color: var(--identity-color);
+  color: #fff;
+  border-color: #fff;
+}
+#plans .popular {
+  position: relative;
+}
+@media (min-width: 1200px) {
+  #plans .popular {
+    transform: translateY(-15px);
+    
+  }
+}
+
+#plans .popular::before {
+  content: "Recommended";
+  background-color: var(--identity-color);
+  color: white;
+  z-index: 2;
+  padding: 6px 0px 31px 5px;
+  font-size: 20px;
+  position: absolute;
+  writing-mode: vertical-rl;/*! important trick by Elzero*/
+  top: 0px;
+  right: 23px;
+  /* transform: rotate(90deg);! My Solution to make font vertical*/ 
+}
+#plans .popular::after {
+  content: "";
+  position: absolute;
+  /* width: 100px; */
+  /* height: 100px; */
+  /* background-color: red; */
+  /* border-bottom: 64px solid palegreen; */
+  top: 135px;
+  right: 21px;
+  border: 15px solid;
+  border-color: transparent transparent white transparent;
+  z-index: 3;
+}
