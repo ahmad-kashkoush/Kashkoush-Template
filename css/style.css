@@ -1646,6 +1646,12 @@ footer .container {
 }
 footer .container .box {
   color: #fff;
+
+}
+@media (max-width:584px){
+  footer .container .box{
+    text-align: center;
+  }
 }
 /* **************************** */
 footer .box-1 {
@@ -1659,7 +1665,14 @@ footer .box-1 .social {
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
+  
 }
+@media (max-width:584px){
+  footer .box-1 .social {
+    justify-content: center;
+  }
+}
+
 footer .box-1 .social li {
   --social-color: #292929;
   cursor: pointer;
@@ -1723,6 +1736,12 @@ footer .box-3 .sub-box {
   margin-bottom: 20px;
   margin-top: 20px;
 }
+@media (max-width:584px){
+  footer .box-3 .sub-box{
+    flex-direction: column;
+  }
+}
+
 footer .box-3 .sub-box i {
   color: var(--identity-color);
   font-size: 25px;
