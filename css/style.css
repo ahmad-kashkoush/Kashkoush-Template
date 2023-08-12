@@ -1481,12 +1481,12 @@ todo article-card
 }
 #stats .box::before,
 #stats .box::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 2px;
   height: 0%;
   background-color: var(--identity-color);
-  transition: height .5s ease-out;
+  transition: height 0.5s ease-out;
 }
 #stats .box::before {
   bottom: 0;
@@ -1497,7 +1497,7 @@ todo article-card
   right: 0;
 }
 #stats .box:hover::after,
-#stats .box:hover::before{
+#stats .box:hover::before {
   height: 100%;
 }
 #stats .box > i {
@@ -1512,3 +1512,123 @@ todo article-card
   font-weight: bold;
 }
 /* ?End stats */
+
+/* ! Start Discounts */
+#discount {
+  display: flex;
+}
+@media (max-width:991px){
+  #discount{
+    flex-direction: column;
+  }
+}
+#discount h2 {
+  text-transform: capitalize;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+/* ********************* */
+#discount .img-part {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url("../imgs/discount-background1.jpg");
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: change-img 10s infinite linear;
+}
+@keyframes change-img {
+  50% {
+    background-image: url("../imgs/discount-background2.jpg");
+  }
+  0%,
+  100% {
+    background-image: url("../imgs/discount-background1.jpg");
+  }
+}
+#discount .img-part::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--identity-color);
+  opacity: 95%;
+  z-index: 1;
+}
+#discount .content {
+  width: 80%;
+  padding: 20px;
+  margin: auto;
+}
+#discount .img-part p {
+  margin: 30px auto;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  font-size: 18px;
+  line-height: 1.3;
+}
+#discount .img-part img {
+  position: relative;
+  z-index: 2;
+  width: 300px;
+  max-width: 100%;
+}
+/* ******************** */
+#discount form {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-background);
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#discount form > h2 {
+  color: #000000;
+  margin-bottom: 30px;
+}
+#discount form input:focus,
+#discount form input,
+#discount form textarea,
+#discount form textarea:focus {
+  border: none;
+  outline: none;
+}
+#discount form input,
+#discount form textarea {
+  margin: 20px 0px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 340px;
+  border-bottom: 1px solid #cccccc;
+  font-size: 18px;
+}
+#discount form input[type="text"] {
+}
+#discount form input[type="email"] {
+}
+#discount form input[type="tel"] {
+}
+#discount textarea {
+}
+#discount form input[type="submit"] {
+  border: none;
+  background-color: var(--identity-color);
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+#discount form input[type="submit"]:hover{
+  background-color: #1787e0;
+}
+/* ? End Discounts */
